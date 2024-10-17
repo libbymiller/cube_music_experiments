@@ -9,16 +9,16 @@
 # one line per day
 # events is master list and must have a line for all days
 
-events_fn = "events_jul_24.txt"
-raw_data_fn = "raw_bar_jul_24.txt"
+events_fn = "events_sep_24.txt"
+raw_data_fn = "raw_bar_sep_24.txt"
 key_fn = "C.txt"
 raw_name = "Bar"
-title = "Cube Accounts 1 July - 31 July 2024."
+title = "Cube Accounts 1 September - 30 September 2024."
 composer = "The Cube"
 
 data_dir = "/Users/libby/cube/music/data"
 out_dir = "/Users/libby/cube/music/lilypond"
-lilyfile = "#{out_dir}/sonicpi_lilypond.lp"
+lilyfile = "#{out_dir}/sonicpi_lilypond_sep_24.lp"
 
 # key uses midi numbers https://computermusicresource.com/midikeys.html
 # min 0, max 127
@@ -89,6 +89,7 @@ end
 c = 0  # events counter, our master list
 cc = 0 # raw data counter, potentially with missing days
 final_data = []
+tmp_raw_plus_blanks = []
 
 puts "events #{events}"
 
@@ -97,14 +98,17 @@ events.length.times do
   puts "day is #{day}"
   if(day > 0)
     final_data[c] = tmp_data[cc]
+    tmp_raw_plus_blanks[c] = raw_data[cc]
     cc = cc +1
   else
     final_data[c] = 0
+    tmp_raw_plus_blanks[c] = 0
   end
   c = c + 1
 end
 
 puts "FINAL DATA #{final_data}"
+puts "FINAL RAW DATA PLUS BLANKS #{tmp_raw_plus_blanks}"
 
 # play the tune
 in_thread do
@@ -167,7 +171,7 @@ in_thread do
       lilypond_part1 = lilypond_part1 + "r "
       lilypond_part2 = lilypond_part2 + "r "
     end
-    sleep 0.2
+    sleep 0.1
     count = count+1
     
   end
@@ -185,6 +189,7 @@ in_thread do
   File.open(lilyfile, 'w') { |file| file.write(lilyheader + lilypond_part2+"\n"+lilypond_part1+"\n"+lilypond_part0+"\n>>\n") }
   
 end
+
 
 
 
