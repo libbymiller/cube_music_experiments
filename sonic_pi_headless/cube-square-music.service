@@ -1,0 +1,8 @@
+[Unit]
+Description=Cube Music Service
+After=wireplumber.service
+
+[Service]
+WorkingDirectory=/home/pi/sonic-pi-dev
+ExecStart=/bin/bash bin/sonic-pi-repl.sh
+
