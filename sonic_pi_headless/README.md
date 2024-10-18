@@ -25,12 +25,7 @@ code -> download zip
     ./linux-build-all.sh --system-libs
 
 # add my new version
-I thought webhooks would be good for this
-
-but for that you need a publically available server, so I pass cleaned up data via MQTT
-
-See square_webhook.py (which is a mess and only works in python 2)
-
+I thought webhooks would be good for this, but for that you need a publically available server, so I pass cleaned up data via MQTT. See square_webhook.py (which is a mess and only works in python 2).
 TBH I think I should just use the API proper but here we are
 
     cp cube_sonicpi_headless.rb server/ruby/bin/
