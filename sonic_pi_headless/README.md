@@ -1,5 +1,6 @@
 All based on this: https://github.com/sonic-pi-net/sonic-pi/issues/3407#issuecomment-2251902029
-See blog post
+
+See blog post here: https://planb.nicecupoftea.org/2024/10/17/commandline-sonic-pi-for-real-time-bar-expenditure-music/ 
 
 # Dependencies
 
