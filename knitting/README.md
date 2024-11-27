@@ -15,6 +15,7 @@ pip3 install numpy Pillow
 
 # RUN
 
+```
 Usage: create_cube_csv.py [filename] [options]
 
 Takes a column of csv data and turns it into a density csv file
@@ -35,3 +36,4 @@ Options:
   -d, --debug           Verbosity / debug [default: False]
   -m MAX_LENGTH, --max=MAX_LENGTH
                         Set the max length of the pattern [default: 200]
+```
