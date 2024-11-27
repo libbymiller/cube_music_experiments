@@ -82,17 +82,18 @@ def generate_density_fragment(density, max_length, repeat_length):
 
     # we want a length of max_length
     for counter in range(1,max_length+1):
-        # should round up
-        # in any given repeat length, we get a 1 density numbers of times
-        #print("density",density)
+
+        # in any given repeat length, we get a density [freq] number of times
+        # e.g. 3 times in 100
         freq = math.ceil(repeat_length/density)
-        #print("freq",freq)
+
         # then we want to add it in if our counter is the same as that value
         hit = int(counter%freq)
         if(hit == 0):
             arr.append("1") 
         else:
             arr.append("0")
+
     if(debug):
         print("result for density:",density,"for repeat_len",repeat_length,"over density is freq:",freq,"is")
         print("".join(arr))
