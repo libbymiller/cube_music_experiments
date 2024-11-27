@@ -87,7 +87,7 @@ def generate_density_fragment(density, max_length, repeat_length):
         # e.g. 3 times in 100
         freq = math.ceil(repeat_length/density)
 
-        # then we want to add it in if our counter is the same as that value
+        # then we want to add it in if our counter every [freq] times i.e. when remainder = 0
         hit = int(counter%freq)
         if(hit == 0):
             arr.append("1") 
